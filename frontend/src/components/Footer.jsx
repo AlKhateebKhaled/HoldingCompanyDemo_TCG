@@ -6,8 +6,11 @@ import {
   FaLinkedin,
   FaEnvelope,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   // Theme Persistence Logic
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -20,8 +23,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-300 py-10 px-5 border-t border-gray-300 dark:border-gray-700">
-      {/* Company Overview Section */}
-      <div className="w-full px-10 flex  gap-8 justify-around">
+      {/* Main Footer Section */}
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-5">
         {/* Site Map */}
         <div>
           <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
@@ -29,13 +32,16 @@ const Footer = () => {
           </h2>
           <ul className="space-y-2">
             <li>
-              <a href="/home" className="hover:text-blue-500 transition-colors">
+              <a
+                onClick={() => navigate("/home")}
+                className="hover:text-blue-500 transition-colors"
+              >
                 Home
               </a>
             </li>
             <li>
               <a
-                href="/about"
+                onClick={() => navigate("/about")}
                 className="hover:text-blue-500 transition-colors"
               >
                 About
@@ -43,7 +49,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="/investments"
+                onClick={() => navigate("/investments")}
                 className="hover:text-blue-500 transition-colors"
               >
                 Investments
@@ -51,7 +57,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="/subsidiaries"
+                onClick={() => navigate("/subsidiaries")}
                 className="hover:text-blue-500 transition-colors"
               >
                 Subsidiaries
@@ -67,7 +73,7 @@ const Footer = () => {
           </h2>
           <ul className="space-y-2">
             <li>
-              Email:
+              Email:{" "}
               <a
                 href="mailto:support@company.com"
                 className="hover:text-pink-500 transition-colors"
@@ -76,7 +82,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              Phone:
+              Phone:{" "}
               <a
                 href="tel:+1234567890"
                 className="hover:text-pink-500 transition-colors"
@@ -93,7 +99,7 @@ const Footer = () => {
           <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
             Follow Us
           </h2>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 justify-start">
             <a
               href="https://facebook.com"
               target="_blank"

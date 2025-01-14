@@ -27,8 +27,6 @@ const Home = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const navigate = useNavigate();
 
-
-
   useEffect(() => {
     if (!AOS.isInitialized) {
       AOS.init({
@@ -541,7 +539,7 @@ const Home = () => {
             data-aos-duration="1000"
           >
             <button
-              onClick={() => (window.location.href = "/contact")}
+              onClick={() => navigate("/contact")}
               className="flex items-center px-8 py-4 bg-white text-blue-700 font-bold rounded-full shadow-lg hover:bg-gray-100 hover:scale-105 transition-transform"
             >
               <i className="fas fa-envelope mr-3"></i> Contact Us
